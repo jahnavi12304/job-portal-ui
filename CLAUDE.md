@@ -68,6 +68,13 @@ docs: update README with localStorage keys
 chore: upgrade react-router to v7.8
 refactor: extract job card into reusable component
 style: fix spacing on mobile job list
+Never mix commit types (docs, chore, feat, fix, refactor) in a single commit.
+- If a file being staged doesn't match the current commit's type 
+  (e.g. a config/tooling file like .claude/settings.json showing up 
+  in a `docs` commit), stop and ask whether it should be:
+  1. A separate commit on the same branch/PR, or
+  2. Held out and committed separately later.
+- Do not silently append mismatched files into an existing commit.
 ```
 
 - Use present tense, lowercase, no period at the end
